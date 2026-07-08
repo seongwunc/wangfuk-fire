@@ -2,6 +2,14 @@
 
 這個資料夾已經包含完整網頁成品，主要文件如下：
 
+## 線上版本
+
+網頁已成功部署到 GitHub Pages，可直接打開：
+
+```text
+https://seongwunc.github.io/wangfuk-fire/
+```
+
 - `index.html`：網頁主頁
 - `styles.css`：樣式表
 - `script.js`：互動與圖表腳本
@@ -65,7 +73,13 @@ http://localhost:8765
 
 ## 部署到 GitHub Pages
 
-本資料夾已整理成 GitHub Pages 可直接部署的靜態網站，入口文件是 `index.html`。
+本資料夾已整理成 GitHub Pages 可直接部署的靜態網站，入口文件是 `index.html`。目前已成功部署，正式網址為：
+
+```text
+https://seongwunc.github.io/wangfuk-fire/
+```
+
+以下步驟保留作為日後重新部署或更新頁面時使用。
 
 ### 1. 在 GitHub 建立新倉庫
 
