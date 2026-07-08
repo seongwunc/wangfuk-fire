@@ -1,0 +1,451 @@
+.memorial-page {
+  background:
+    radial-gradient(circle at 76% 12%, rgba(244, 186, 121, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(73, 13, 13, 0.12), rgba(5, 5, 5, 0.96) 38%, #050505 100%);
+}
+
+.memorial-hero {
+  min-height: 92svh;
+}
+
+.memorial-hero__image {
+  background:
+    linear-gradient(90deg, rgba(3, 3, 3, 0.98) 0%, rgba(3, 3, 3, 0.58) 48%, rgba(3, 3, 3, 0.92) 100%),
+    url("./assets/hero-chinadaily.jpg") center center / cover no-repeat;
+}
+
+.memorial-hero__veil {
+  background:
+    radial-gradient(circle at 64% 32%, rgba(255, 92, 56, 0.28), transparent 24%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.68) 72%, #050505 100%);
+}
+
+.memorial-hero__grid {
+  padding-bottom: 46px;
+}
+
+.memorial-hero h1 {
+  max-width: 12ch;
+}
+
+.memorial-section {
+  padding-top: 70px;
+}
+
+.memorial-viz-layout {
+  display: grid;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.memorial-viz-layout--sound {
+  grid-template-columns: minmax(280px, 0.38fr) minmax(0, 1fr);
+}
+
+.memorial-viz-layout--lamp {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.38fr);
+}
+
+.memorial-copy {
+  align-self: stretch;
+  padding: clamp(24px, 4vw, 34px);
+  background:
+    linear-gradient(180deg, rgba(42, 12, 11, 0.88), rgba(11, 7, 7, 0.86)),
+    url("./assets/impact-photo-2.png") center center / cover no-repeat;
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.memorial-copy__lead {
+  margin: 0;
+  color: #f1ddd2;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.memorial-stat-strip {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.memorial-stat-strip span {
+  display: block;
+  padding: 14px 16px;
+  color: #dfc6b8;
+  background: rgba(7, 7, 7, 0.58);
+  border: 1px solid rgba(255, 123, 88, 0.18);
+  border-radius: 14px;
+}
+
+.memorial-stat-strip b {
+  display: block;
+  margin-bottom: 3px;
+  color: #fff4ea;
+  font-size: clamp(1.35rem, 2.7vw, 2rem);
+  line-height: 1.05;
+}
+
+.memorial-source-note {
+  margin: 0;
+  color: rgba(247, 238, 232, 0.76);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.memorial-chart-frame {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(17, 8, 8, 0.92), rgba(5, 5, 5, 0.95)),
+    radial-gradient(circle at 30% 20%, rgba(255, 92, 56, 0.12), transparent 34%);
+  border: 1px solid rgba(255, 123, 88, 0.22);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.memorial-chart-frame figcaption {
+  margin: 0;
+  padding: 12px 18px 16px;
+  color: rgba(247, 238, 232, 0.68);
+  font-size: 0.86rem;
+}
+
+.soundwall-chart,
+.lampwall-chart {
+  position: relative;
+  min-height: 620px;
+}
+
+.soundwall-chart svg,
+.lampwall-chart svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+}
+
+.sound-row {
+  cursor: pointer;
+}
+
+.sound-wave {
+  fill: none;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 7px rgba(255, 126, 82, 0.28));
+  transition: opacity 180ms ease, stroke 180ms ease, stroke-width 180ms ease;
+}
+
+.sound-row:hover .sound-wave,
+.sound-row.is-active .sound-wave {
+  stroke: #fff3df;
+  stroke-width: 2.4px;
+  opacity: 1;
+}
+
+.sound-date-label,
+.lamp-axis-label {
+  fill: rgba(247, 238, 232, 0.58);
+  font-size: 11px;
+}
+
+.sound-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 0 18px 8px;
+  color: rgba(247, 238, 232, 0.7);
+  font-size: 0.84rem;
+}
+
+.sound-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sound-legend i {
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.sound-legend__general {
+  color: #ff8a5a;
+  background: #ff8a5a;
+}
+
+.sound-legend__resident {
+  color: #8cc8e8;
+  background: #8cc8e8;
+}
+
+.viz-tooltip {
+  position: absolute;
+  z-index: 8;
+  width: min(440px, calc(100% - 28px));
+  max-height: min(520px, calc(100% - 28px));
+  padding: 16px;
+  color: #fff4ea;
+  background: rgba(8, 6, 6, 0.94);
+  border: 1px solid rgba(255, 140, 92, 0.38);
+  border-radius: 18px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.viz-tooltip--full {
+  width: min(560px, calc(100% - 28px));
+}
+
+.viz-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.viz-tooltip h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.viz-tooltip p {
+  margin: 0;
+  color: #e7cfc0;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.viz-tooltip__body {
+  max-height: 300px;
+  overflow: auto;
+  padding-right: 6px;
+  white-space: pre-wrap;
+}
+
+.viz-tooltip small {
+  display: block;
+  margin-top: 10px;
+  color: rgba(247, 238, 232, 0.58);
+  font-size: 0.76rem;
+}
+
+.lamp {
+  cursor: pointer;
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.lamp-core {
+  stroke: rgba(255, 245, 220, 0.4);
+  stroke-width: 0.7;
+}
+
+.lamp-hit-area {
+  fill: transparent;
+  pointer-events: all;
+}
+
+.lamp:hover,
+.lamp.is-active {
+  filter: drop-shadow(0 0 16px rgba(255, 201, 134, 0.9));
+}
+
+.lamp:hover .lamp-core,
+.lamp.is-active .lamp-core {
+  stroke: #fff7df;
+  stroke-width: 1.4;
+}
+
+.lamp-bg-window {
+  fill: rgba(255, 255, 255, 0.025);
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1;
+}
+
+.sound-detail-panel {
+  margin: 24px 0 0;
+  padding: 18px;
+  max-height: 390px;
+  overflow: auto;
+  background: rgba(7, 7, 7, 0.62);
+  border: 1px solid rgba(255, 123, 88, 0.2);
+  border-radius: 18px;
+}
+
+.sound-detail-panel__empty {
+  margin: 0;
+  color: rgba(247, 238, 232, 0.68);
+  line-height: 1.8;
+}
+
+.sound-detail-panel h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  color: #fff4ea;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.sound-detail-panel p {
+  margin: 0;
+  color: #f1ddd2;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  white-space: pre-wrap;
+}
+
+.sound-detail-panel small {
+  display: block;
+  margin-top: 12px;
+  color: rgba(247, 238, 232, 0.58);
+}
+
+.lamp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 0 18px 16px;
+  color: rgba(247, 238, 232, 0.7);
+  font-size: 0.84rem;
+}
+
+.lamp-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lamp-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.lamp-section-label {
+  fill: #fff4ea;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.lamp-section-note {
+  fill: rgba(247, 238, 232, 0.58);
+  font-size: 11px;
+}
+
+.lamp-divider {
+  stroke: rgba(255, 123, 88, 0.18);
+  stroke-width: 1;
+}
+
+.lamp-detail-panel {
+  margin: 0 0 24px;
+  padding: 18px;
+  background: rgba(7, 7, 7, 0.62);
+  border: 1px solid rgba(255, 123, 88, 0.2);
+  border-radius: 18px;
+}
+
+.lamp-detail-panel__empty {
+  margin: 0;
+  color: rgba(247, 238, 232, 0.68);
+  line-height: 1.8;
+}
+
+.lamp-detail-panel__notice {
+  margin: 0 0 14px;
+  color: rgba(247, 238, 232, 0.68);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.lamp-detail-panel h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  color: #fff4ea;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.lamp-detail-panel dl {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.35fr) minmax(0, 1fr);
+  gap: 8px 14px;
+  margin: 0;
+}
+
+.lamp-detail-panel dt {
+  color: rgba(247, 238, 232, 0.56);
+  font-size: 0.82rem;
+}
+
+.lamp-detail-panel dd {
+  margin: 0;
+  color: #f1ddd2;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.lamp-detail-panel a {
+  display: inline-block;
+  margin-top: 16px;
+  color: #1b0a08;
+  font-weight: 900;
+  text-decoration: none;
+  background: #f4ba79;
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.memorial-sources {
+  margin-top: 70px;
+}
+
+@media (max-width: 1100px) {
+  .memorial-viz-layout--sound,
+  .memorial-viz-layout--lamp {
+    grid-template-columns: 1fr;
+  }
+
+  .memorial-viz-layout--lamp .memorial-copy {
+    order: -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .memorial-hero {
+    min-height: 96svh;
+  }
+
+  .memorial-hero h1 {
+    font-size: clamp(3.1rem, 16vw, 4.7rem);
+  }
+
+  .memorial-section {
+    padding-top: 44px;
+  }
+
+  .soundwall-chart,
+  .lampwall-chart {
+    min-height: 520px;
+  }
+
+  .memorial-copy,
+  .memorial-chart-frame {
+    border-radius: 22px;
+  }
+
+  .lamp-detail-panel dl {
+    grid-template-columns: 1fr;
+  }
+}
