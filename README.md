@@ -16,25 +16,6 @@ https://seongwunc.github.io/wangfuk-fire/
 - `d3.min.js`：本地 D3 函式庫
 - `assets/`：圖片素材
 
-## 怎麼打開網頁
-
-### 用本地伺服器打開
-1. 打開 Terminal
-2. 進入專案資料夾
-3. 啟動本地伺服器：
-
-```bash
-python3 -m http.server 8765
-```
-
-4. 在瀏覽器打開：
-
-```text
-http://localhost:8765
-```
-
-5. 看完後回到 Terminal，按 `Ctrl + C` 關閉伺服器
-
 ## 建議使用
 
 - 建議用 `Google Chrome` 開啟
